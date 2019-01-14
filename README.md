@@ -66,5 +66,5 @@ curl http://localhost:9191/backup -o bitcoin.tgz
 
 Restore
 ```
- curl http://localhost:9191/restore --data-binary @./bitcoin.tgz
+curl http://localhost:9191/restore --data-binary @./bitcoin.tgz
 ```
