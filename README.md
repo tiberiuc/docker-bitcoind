@@ -21,7 +21,7 @@ $ docker run --name bitcoind -d \
    --volume /home/youruser/bitcoin_data:/root/.bitcoin \
    -p 127.0.0.1:8332:8332 \
    --publish 8333:8333 \
-   --publis 9191:9191 \
+   --publish 9191:9191 \
    tiberiuc/bitcoind
 
 $ docker logs -f bitcoind
