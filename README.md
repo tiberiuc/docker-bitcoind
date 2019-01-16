@@ -4,7 +4,7 @@
 A Docker configuration with sane defaults for running a fully-validating
 Bitcoin node, based on [Alpine Linux](https://alpinelinux.org/).
 
-Full support for regtest and [backup_agent](https://github.com/tiberiuc/docker_backup_agent)
+Full support for regtest and [backup-agent](https://github.com/tiberiuc/docker-backup-agent)
 
 Wallet notify support by running curl with the address from env `BTC_WALLET_NOTIFY` sending a JSON in format { "txid": "...txid..." }
 
