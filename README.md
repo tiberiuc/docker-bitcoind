@@ -6,6 +6,8 @@ Bitcoin node, based on [Alpine Linux](https://alpinelinux.org/).
 
 Full support for regtest and [backup_agent](https://github.com/tiberiuc/docker_backup_agent)
 
+Wallet notify support by running curl with the address from env `BTC_WALLET_NOTIFY`
+
 ## Quick start
 
 Requires that [Docker be installed](https://docs.docker.com/engine/installation/) on the host machine.
@@ -51,6 +53,7 @@ on environment variables passed to the container:
 | BTC_ZMQPUBHASHBLOCK | tcp://0.0.0.0:28333 |
 | BTC_ZMQPUBRAWTX | tcp://0.0.0.0:28333 |
 | BTC_ZMQPUBRAWBLOCK | tcp://0.0.0.0:28333 |
+| BTC_WALLET_NOTIFY | http://app:8080 |
 
 
 ## Daemonizing

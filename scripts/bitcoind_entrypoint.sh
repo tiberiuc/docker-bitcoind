@@ -4,6 +4,7 @@ set -euo pipefail
 
 BITCOIN_DIR=/root/.bitcoin
 BITCOIN_CONF=${BITCOIN_DIR}/bitcoin.conf
+WALLET_NOTIFY_SCRIPT=/root/transaction.sh
 
 # If config doesn't exist, initialize with sane defaults for running a
 # non-mining node.
@@ -54,8 +55,24 @@ zmqpubrawtx=${BTC_ZMQPUBRAWTX:-tcp://0.0.0.0:28333}
 zmqpubhashtx=${BTC_ZMQPUBHASHTX:-tcp://0.0.0.0:28333}
 zmqpubhashblock=${BTC_ZMQPUBHASHBLOCK:-tcp://0.0.0.0:28333}
 
+walletnotify=${WALLET_NOTIFY_SCRIPT} %s
 EOF
 fi
+
+if [ ! -e "${WALLET_NOTIFY_SCRIPT}" ]; then
+  if [ ${BTC_WALLET_NOTIFY} ] ; then
+    tee -a >${WALLET_NOTIFY_SCRIPT} <<EOF
+  #!/bin/sh
+  curl http://${BTC_WALLET_NOTIFY}
+EOF
+  else
+    tee -a >${WALLET_NOTIFY_SCRIPT} <<EOF
+    #!/bin/sh
+EOF
+  fi
+fi
+
+chmod +x ${WALLET_NOTIFY_SCRIPT}
 
 if [ $# -eq 0 ]; then
   exec bitcoind -datadir=${BITCOIN_DIR} -conf=${BITCOIN_CONF}
