@@ -1,4 +1,4 @@
-FROM tiberiuc/backup_agent as backup
+FROM tiberiuc/backup-agent as backup
 MAINTAINER Tiberiu Craciun <tibi@happysoft.ro>
 
 FROM alpine
