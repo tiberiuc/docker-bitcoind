@@ -62,12 +62,13 @@ fi
 if [ ! -e "${WALLET_NOTIFY_SCRIPT}" ]; then
   if [ -n "${BTC_WALLET_NOTIFY-}" ] ; then
     tee -a >${WALLET_NOTIFY_SCRIPT} <<EOF
-  #!/bin/sh
-  curl -i -X POST -H "Content-Type:application/json" -d "{\"txid\":\"$1\"}" ${BTC_WALLET_NOTIFY}
+#!/bin/sh
+
+curl -i -X POST -H "Content-Type:application/json" -d "{\"txid\":\"$1\"}" ${BTC_WALLET_NOTIFY}
 EOF
   else
     tee -a >${WALLET_NOTIFY_SCRIPT} <<EOF
-    #!/bin/sh
+#!/bin/sh
 EOF
   fi
 fi
