@@ -6,7 +6,7 @@ Bitcoin node, based on [Alpine Linux](https://alpinelinux.org/).
 
 Full support for regtest and [backup_agent](https://github.com/tiberiuc/docker_backup_agent)
 
-Wallet notify support by running curl with the address from env `BTC_WALLET_NOTIFY` seding a JSON in format { "txid": "...txid..." }
+Wallet notify support by running curl with the address from env `BTC_WALLET_NOTIFY` sending a JSON in format { "txid": "...txid..." }
 
 ## Quick start
 
