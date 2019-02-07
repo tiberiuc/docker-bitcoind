@@ -3,7 +3,8 @@ MAINTAINER Tiberiu Craciun <tibi@happysoft.ro>
 
 FROM alpine
 
-ARG VERSION=0.17.1
+#ARG VERSION=0.17.1
+ARG VERSION=0.16.3
 ARG GLIBC_VERSION=2.28-r0
 
 ENV FILENAME bitcoin-${VERSION}-x86_64-linux-gnu.tar.gz
